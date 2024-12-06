@@ -1,0 +1,13 @@
+npm init -y
+
+npm i ejs express mongoose 
+
+npm i dotenv
+
+//for googleAuth
+npm install express passport passport-google-oauth20 express-session dotenv
+
+//for socket.io
+
+npm i socket.io
+
