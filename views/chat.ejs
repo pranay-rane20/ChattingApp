@@ -26,12 +26,12 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        const user = JSON.parse(`<%- JSON.stringify(user) %>`);
+
+        const user = JSON.parse('<%- JSON.stringify(user) %>');
 
         const socket = io();
 
-        socket.emit('join',user._id)
-
+        socket.emit('join', user._id)
 
     </script>
 </body>
