@@ -1,39 +1,33 @@
-/* 
-socketId - sabhi users ke liye unique hota hai
-        - har bar change hota hai jab bhi user login karta hai
-*/
+const mongoose = require("mongoose");
 
-
-const mongoose = require('mongoose');
-
-const userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema(
+  {
     googleId: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true
+      type: String,
+      required: true,
     },
     displayName: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     image: {
-        type: String,
+      type: String,
     },
     socketId: {
-        type: String,
-        default: ''
-    }
-},
-    {
-        timestamps: true
-    }
+      type: String,
+      default: "",
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
 );
 
-
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
